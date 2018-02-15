@@ -30,7 +30,7 @@ void RPNCalculator::perform(Operation * operation)
 	int top2 = stack.top();
 	stack.pop();
 
-	stack.push(operation->perform(top1, top2));
+	stack.push(operation->perform(top2, top1));
 }
 
 //Process passed formula
@@ -39,16 +39,19 @@ void RPNCalculator::perform(Operation * operation)
 //RETURE: final value
 int RPNCalculator::process_formula(std::string formula)
 {
-	int left, right;
-	char _operator;
 	
 	std::istringstream iss(formula);
-	iss >> left >> right >> _operator;
+	std::string operand;
 	
-	stack.push(left);
-	stack.push(right);
-	
-	perform(operation_type(_operator));
-
+	while (iss >> operand) {
+		std::istringstream iss2(operand);
+		int temp;
+		if (iss2 >> temp) {
+			stack.push(temp);
+		}
+		else {
+			perform(operation_type(operand[0]));
+		}
+	}
 	return stack.top();
 }
