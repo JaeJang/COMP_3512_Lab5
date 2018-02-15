@@ -15,3 +15,17 @@ Operation * RPNCalculator::operation_type(char operation)
 	else
 		return new DivisionOperation();
 }
+
+//Perform main feature
+//PRE	: one of 4classes need to be passed
+//POST	: take top 2elements out 
+//		  push calculated result into the stack
+void RPNCalculator::perform(Operation * operation)
+{
+	int top1 = stack.top();
+	stack.pop();
+	int top2 = stack.top();
+	stack.pop();
+
+	stack.push(operation->perform(top1, top2));
+}
