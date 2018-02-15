@@ -3,7 +3,7 @@
 class DivisionOperation : public AbstractOperation {
 
 public:
-	const char OPERATION_CODE = '/';
+	const static char OPERATION_CODE = '/';
 	DivisionOperation() :AbstractOperation(OPERATION_CODE) { }
 	virtual ~DivisionOperation() { }
 	int perform(int a, int b) { return a / b; }

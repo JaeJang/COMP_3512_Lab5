@@ -120,7 +120,11 @@
     <ClInclude Include="DivisionOperation.hpp" />
     <ClInclude Include="MultiplicationOperation.hpp" />
     <ClInclude Include="Operation.hpp" />
+    <ClInclude Include="RPNCalculator.hpp" />
     <ClInclude Include="SubtractionOperation.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RPNCalculator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

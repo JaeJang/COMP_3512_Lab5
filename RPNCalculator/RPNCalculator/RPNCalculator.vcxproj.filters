@@ -33,5 +33,13 @@
     <ClInclude Include="DivisionOperation.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RPNCalculator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RPNCalculator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
