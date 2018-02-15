@@ -1,4 +1,7 @@
 #include "RPNCalculator.hpp"
+#include <iostream>
+#include <string>
+#include <sstream>
 
 //Decide operation type
 //PRE	: parameter should be one of +,-,* and /
@@ -28,4 +31,24 @@ void RPNCalculator::perform(Operation * operation)
 	stack.pop();
 
 	stack.push(operation->perform(top1, top2));
+}
+
+//Process passed formula
+//PRE	: well formatted formula is needed
+//POST	: tokenize the formula and push them into stack and calculate
+//RETURE: final value
+int RPNCalculator::process_formula(std::string formula)
+{
+	int left, right;
+	char _operator;
+	
+	std::istringstream iss(formula);
+	iss >> left >> right >> _operator;
+	
+	stack.push(left);
+	stack.push(right);
+	
+	perform(operation_type(_operator));
+
+	return stack.top();
 }

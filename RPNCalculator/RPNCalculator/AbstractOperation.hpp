@@ -1,3 +1,4 @@
+#pragma once
 #include "Operation.hpp"
 
 class AbstractOperation : public Operation{

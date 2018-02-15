@@ -12,5 +12,8 @@ private:
 	std::stack<int> stack;
 	Operation* operation_type(char operation);
 	void perform(Operation* operation);
+
+public:
+	int process_formula(std::string formual);
 	
 };

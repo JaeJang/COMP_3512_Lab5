@@ -1,3 +1,4 @@
+#pragma once
 #include "AbstractOperation.hpp"
 
 class SubstractionOperation : public AbstractOperation {
